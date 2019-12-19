@@ -6,7 +6,7 @@ import alias from '@rollup/plugin-alias';
 import postcss from "rollup-plugin-postcss";
 import resolve from '@rollup/plugin-node-resolve';
 
-function resolve(dir) {
+function resolveDir(dir) {
     return path.join(__dirname, '..', dir);
 }
 
@@ -33,8 +33,8 @@ export default {
             extensions: ['.ts', '.js', '.vue', '.json', '.styl', '.scss'],
             alias: {
                 vue$: 'vue/dist/vue.esm.js',
-                '@': resolve('src'),
-                '@@': resolve('.')
+                '@': resolveDir('src'),
+                '@@': resolveDir('.')
             }
         }),
         VuePlugin(),

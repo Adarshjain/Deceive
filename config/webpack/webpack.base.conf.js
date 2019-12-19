@@ -114,16 +114,16 @@ module.exports = function(options) {
                     exclude: [resolve('src/stories')],
                     include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
                 },
-                {
-                    test: /.*stories.*\.tsx?$/,
-                    loaders: [
-                        {
-                            loader: require.resolve('@storybook/addon-storysource/loader'),
-                            options: { parser: 'typescript' }
-                        }
-                    ],
-                    enforce: 'pre'
-                },
+                // {
+                //     test: /.*stories.*\.tsx?$/,
+                //     loaders: [
+                //         {
+                //             loader: require.resolve('@storybook/addon-storysource/loader'),
+                //             options: { parser: 'typescript' }
+                //         }
+                //     ],
+                //     enforce: 'pre'
+                // },
                 {
                     test: /\.ts$/,
                     use: [
