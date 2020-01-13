@@ -126,7 +126,7 @@
 }
 
 .d-button--ghost:focus {
-    @apply shadow-none bg-blue-100 border-transparent;
+    @apply shadow-none bg-blue-50 border-transparent;
 }
 
 .d-button--ghost:active {
