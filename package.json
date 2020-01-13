@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "roll": "rollup -w -c",
-    "storybook": "start-storybook -c config/storybook/"
+    "storybook": "start-storybook -c config/storybook/ -p 12345"
   },
   "repository": "git+https://github.com/Adarshjain/Deceive.git",
   "keywords": [],
@@ -52,6 +52,7 @@
     "tailwindcss-transitions": "^2.1.0",
     "ts-jest": "^24.2.0",
     "ts-loader": "^6.2.1",
+    "tslib": "^1.10.0",
     "typescript": "^3.7.3",
     "vue": "^2.6.11",
     "vue-class-component": "^7.1.0",

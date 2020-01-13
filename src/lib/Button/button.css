@@ -1,0 +1,150 @@
+@import '../common/style/common.css';
+
+.d-button {
+    @apply border border-transparent shadow whitespace-no-wrap leading-none transition-all select-none h-8 px-5 py-2 rounded-6 text-xs bg-white relative z-0;
+}
+
+.d-button:hover {
+    @apply shadow-md;
+}
+
+.d-button:focus {
+    @apply shadow-md border-blue-200;
+}
+
+.d-button:active {
+    @apply shadow-none;
+}
+
+.d-button__loader {
+    @apply hidden absolute pointer-events-none z-10 bg-blue-100 rounded-6;
+    left: -1px;
+    right: -1px;
+    top: -1px;
+    bottom: -1px;
+    background: repeating-linear-gradient(45deg, rgb(168, 203, 255), rgb(168, 203, 255) 1px, rgb(244, 247, 252) 1px, rgb(244, 247, 252) 5px);
+}
+
+.d-button__spinner {
+    @apply hidden absolute pointer-events-none z-10 rounded-6 border-2 border-blue-400;
+    border-top-color: transparent !important;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    left: 50%;
+    top: 50%;
+    margin-top: -8px;
+    margin-left: -8px;
+    animation: rotateLoading .5s infinite linear;
+
+}
+
+.d-button--loading .d-button__loader,
+.d-button--loading .d-button__spinner {
+    @apply block;
+}
+
+.d-button--large {
+    @apply h-10 text-sm;
+}
+
+.d-button--small {
+    @apply px-4 py-0 rounded-4;
+    font-size: 11px;
+    line-height: 0;
+}
+
+.d-button--full-width {
+    @apply w-full;
+}
+
+/* SECONDARY START */
+.d-button--secondary {
+    @apply shadow-none;
+    border: 1px solid rgb(226, 233, 249);
+}
+
+.d-button--secondary:hover {
+    @apply shadow-none bg-blue-50 border-blue-100;
+}
+
+.d-button--secondary:focus {
+    @apply shadow-none bg-blue-50;
+    border-color: rgb(132, 163, 230);
+}
+
+.d-button--secondary:active {
+    @apply shadow-none bg-blue-50;
+    background-color: rgba(0, 82, 204, 0.1);
+}
+
+/* PRIMARY START */
+.d-button--primary {
+    @apply text-white border;
+    background-color: rgb(90, 40, 210);
+}
+
+.d-button--primary:hover {
+    background-color: #7c1eff;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.12), 0 2px 4px 0 rgba(0, 0, 0, 0.24);
+}
+
+.d-button--primary:focus {
+    @apply bg-primary-300 border-blue-400;
+    box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+.d-button--primary:active {
+    @apply bg-primary-300 border-blue-400 shadow-none;
+}
+
+.d-button--primary .d-button__loader {
+    background: repeating-linear-gradient(45deg, rgb(218, 192, 255), rgb(218, 192, 255) 1px, rgb(242, 233, 255) 1px, rgb(242, 233, 255) 5px);
+}
+
+.d-button--primary .d-button__spinner {
+    @apply border-primary-400;
+}
+
+/* PRIMARY END */
+
+/* GHOST START */
+.d-button--ghost.d-button--small {
+    @apply leading-none rounded-4;
+}
+
+.d-button--ghost {
+    @apply shadow-none text-blue-400 p-0 rounded-4;
+    height: auto;
+}
+
+.d-button--ghost:hover {
+    @apply shadow-none;
+    color: rgb(100, 100, 140);
+
+}
+
+.d-button--ghost:focus {
+    @apply shadow-none bg-blue-100 border-transparent;
+}
+
+.d-button--ghost:active {
+    @apply shadow-none;
+}
+
+/* GHOST END */
+
+
+.d-button--disabled,
+.d-button--disabled:hover,
+.d-button--disabled:focus,
+.d-button--disabled:active {
+    @apply bg-gray-300 text-gray-500 cursor-not-allowed pointer-events-none shadow-none border-gray-300;
+    background: repeating-linear-gradient(45deg, #bcbcd4, #bcbcd4 1px, #e2e8f0 1px, #e2e8f0 5px);
+}
+
+/*.d-button--disabled .d-button__loader,*/
+/*.d-button--disabled .d-button__spinner {*/
+/*    @apply hidden !important;*/
+/*}*/
