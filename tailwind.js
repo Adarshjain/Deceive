@@ -9,6 +9,7 @@ module.exports = {
             '4': '0.25rem',
             '6': '0.375rem',
             '8': '0.5rem',
+            '50': '50%',
         },
         colors: {
             ...colors,
