@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "roll": "rollup -w -c",
-    "storybook": "start-storybook -c config/storybook/ -p 12345"
+    "storybook": "start-storybook -c config/storybook/ -p 12345",
+    "build-storybook": "build-storybook -c config/storybook/"
   },
   "repository": "git+https://github.com/Adarshjain/Deceive.git",
   "keywords": [],
