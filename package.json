@@ -6,7 +6,7 @@
   "scripts": {
     "roll": "rollup -w -c",
     "storybook": "start-storybook -c config/storybook/ -p 12345",
-    "build-storybook": "build-storybook -c config/storybook/"
+    "build-storybook": "build-storybook -c config/storybook/ -o .out"
   },
   "repository": "git+https://github.com/Adarshjain/Deceive.git",
   "keywords": [],
