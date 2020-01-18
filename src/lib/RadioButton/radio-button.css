@@ -1,0 +1,81 @@
+.d-radio__label {
+    @apply text-base my-1 inline-flex items-center;
+    height: 16px;
+}
+
+.d-radio {
+    @apply hidden;
+}
+
+.d-radio__label {
+    @apply cursor-pointer relative;
+}
+
+.d-radio__value {
+    @apply pl-2;
+}
+
+.d-radio__icon {
+    @apply text-lg !important;
+    content: "face";
+}
+
+.d-radio__error-msg {
+    @apply text-xs text-red-400;
+    padding-left: 28px;
+    margin-top: -4px;
+    padding-bottom: 8px;
+}
+
+.d-radio--large.d-radio__label {
+    @apply text-lg my-2;
+    height: 24px;
+}
+
+.d-radio--large .d-radio__value {
+    @apply pl-3;
+}
+
+.d-radio--large .d-radio__icon {
+    @apply text-2xl !important;
+}
+
+.d-radio--large.d-radio__error-msg {
+    @apply text-red-400;
+    padding-left: 38px;
+    margin-top: -8px;
+    padding-bottom: 16px;
+}
+
+.d-radio--full-width.d-radio__label {
+    @apply flex;
+}
+
+.d-radio:checked + .d-radio__icon,
+.d-radio:focus + .d-radio__icon {
+    @apply text-blue-400 !important;
+}
+
+.d-radio--error .d-radio__icon,
+.d-radio--error .d-radio:checked + .d-radio__icon,
+.d-radio--error .d-radio:focus + .d-radio__icon {
+    @apply text-red-400 !important;
+}
+
+.d-radio--disabled.d-radio__label {
+    @apply cursor-not-allowed pointer-events-none;
+}
+
+.d-radio--disabled .d-radio__value {
+    @apply text-gray-400 !important;
+}
+
+.d-radio--disabled .d-radio__icon,
+.d-radio--disabled .d-radio:checked + .d-radio__icon,
+.d-radio--disabled .d-radio:focus + .d-radio__icon {
+    @apply text-gray-400 !important;
+}
+
+.d-radio--disabled.d-radio__error-msg {
+    @apply text-red-200;
+}
