@@ -1,0 +1,116 @@
+.d-switch__label {
+    @apply text-base inline-flex items-center;
+    height: 16px;
+    margin: 6px 0;
+}
+
+.d-switch {
+    @apply hidden;
+}
+
+.d-switch__label {
+    @apply cursor-pointer relative;
+}
+
+.d-switch__value {
+    @apply relative;
+    padding-left: 44px;
+}
+
+.d-switch__value:before,
+.d-switch__value:after {
+    @apply absolute;
+    content: '';
+}
+
+.d-switch__value:before {
+    @apply border border-gray-700 bg-gray-700;
+    border-radius: 10px;
+    left: 0;
+    top: 2px;
+    width: 34px;
+    height: 20px;
+}
+
+.d-switch__value:after {
+    @apply rounded-50 bg-white;
+    left: 2px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    transition: left 0.3s ease;
+}
+
+.d-switch:checked + .d-switch__value:before {
+    @apply border-blue-400 bg-blue-400;
+}
+
+.d-switch:checked + .d-switch__value:after {
+    left: 16px;
+}
+
+.d-switch--error .d-switch:checked + .d-switch__value:before {
+    @apply border-red-400 bg-red-400;
+}
+
+.d-switch__error-msg {
+    @apply text-xs text-red-400;
+    padding-left: 44px;
+    margin-top: -4px;
+    padding-bottom: 8px;
+}
+
+.d-switch--large.d-switch__label {
+    @apply text-lg my-2;
+    height: 24px;
+}
+
+.d-switch--large .d-switch__value {
+    padding-left: 60px;
+}
+
+.d-switch--large .d-switch__value:before {
+    top: 1px;
+    height: 26px;
+    width: 48px;
+    border-radius: 9px;
+}
+
+.d-switch--large .d-switch__value:after {
+    width: 18px;
+    height: 18px;
+    top: 5px;
+    left: 4px;
+    border-radius: 6px;
+}
+
+.d-switch--large .d-switch:checked + .d-switch__value:after {
+    left: 26px;
+}
+
+.d-switch--large.d-switch__error-msg {
+    @apply text-red-400;
+    padding-left: 60px;
+    margin-top: -8px;
+    padding-bottom: 16px;
+}
+
+.d-switch--full-width.d-switch__label {
+    @apply flex;
+}
+
+.d-switch--disabled.d-switch__label {
+    @apply cursor-not-allowed pointer-events-none;
+}
+
+.d-switch--disabled .d-switch__value {
+    @apply text-gray-400 !important;
+}
+
+.d-switch--disabled .d-switch__value:before {
+    @apply border-gray-400 bg-gray-400 !important;
+}
+
+.d-switch--disabled.d-switch__error-msg {
+    @apply text-red-200;
+}
