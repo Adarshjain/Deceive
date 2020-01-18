@@ -18,7 +18,7 @@
 <style src="../../assets/styles/index.css"></style>
 <style scoped>
     .material-icons{
-        font-size: inherit !important;
-        color: inherit !important;
+        font-size: inherit;
+        color: inherit;
     }
 </style>
