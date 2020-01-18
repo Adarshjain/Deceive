@@ -38,21 +38,22 @@ import DIcon from "../Icon/DIcon.vue";
 })
 export default class DCheckbox extends Vue {
     checked!: boolean;
+    internalChecked: boolean = false;
     intermediate!: boolean;
     size!: string;
+
+    onChange(event){
+        this.internalChecked = event.target.checked || this.checked;
+    }
 
     get sizeClass() {
         return "d-checkbox--" + this.size;
     }
 
-    // get errorClass() {
-    //     return "";
-    // }
-
     get checkboxIcon() {
         if(this.intermediate){
             return "indeterminate_check_box";
-        } else if (this.checked){
+        } else if (this.internalChecked){
             return "check_box";
 
         }else{

@@ -17,6 +17,7 @@
                    :name="name"
                    :disabled="disabled"
                    :intermediate="intermediate"
+                   @change="onChange"
             >
             <DIcon class="d-checkbox__icon" :icon="checkboxIcon"/>
             <span class="d-checkbox__value" v-if="label">{{label}}</span>
@@ -28,7 +29,8 @@
                 },
                 sizeClass]"
              v-if="error !== ''"
-        >{{error}}</div>
+        >{{error}}
+        </div>
     </div>
 </template>
 
