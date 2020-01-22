@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import DIcon from "../Icon/DIcon.vue";
+import DIcon from "../../lib/Icon/DIcon.vue";
+import {Watch} from "vue-property-decorator";
 
 @Component({
-    name: 'DCheckbox',
+    name: 'DRadioButton',
     props: {
         label: {
             type: String
@@ -19,10 +20,6 @@ import DIcon from "../Icon/DIcon.vue";
         name: {
             type: String
         },
-        intermediate: {
-            type: Boolean,
-            default: false
-        },
         size: {
             type: String
         },
@@ -32,32 +29,37 @@ import DIcon from "../Icon/DIcon.vue";
         fullWidth: {
             type: Boolean,
             default: false
-        },
+        }
     },
     components: {DIcon}
 })
-export default class DCheckbox extends Vue {
+export default class DRadioButton extends Vue {
     checked!: boolean;
+    disabled!: boolean;
     internalChecked: boolean = false;
-    intermediate!: boolean;
     size!: string;
 
-    onChange(event){
-        this.internalChecked = event.target.checked || this.checked;
+    @Watch('checked')
+    watchChecked(newVal) {
+        this.internalChecked = newVal;
     }
 
     get sizeClass() {
-        return "d-checkbox--" + this.size;
+        return "d-radio--" + this.size;
     }
 
-    get checkboxIcon() {
-        if(this.intermediate){
-            return "indeterminate_check_box";
-        } else if (this.internalChecked){
-            return "check_box";
+    onChange(event) {
+        if(this.disabled){
+            return;
+        }
+        this.internalChecked = event.target.checked || this.checked;
+    }
 
-        }else{
-            return "check_box_outline_blank";
+    get radioIcon() {
+        if (this.internalChecked) {
+            return "radio_button_checked";
+        } else {
+            return "radio_button_unchecked";
         }
     }
 }

@@ -1,9 +1,8 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
-import DIcon from "../Icon/DIcon.vue";
 
 @Component({
-    name: 'DCheckbox',
+    name: 'DSwitch',
     props: {
         label: {
             type: String
@@ -33,10 +32,9 @@ import DIcon from "../Icon/DIcon.vue";
             type: Boolean,
             default: false
         },
-    },
-    components: {DIcon}
+    }
 })
-export default class DCheckbox extends Vue {
+export default class DSwitch extends Vue {
     checked!: boolean;
     internalChecked: boolean = false;
     intermediate!: boolean;
@@ -47,17 +45,6 @@ export default class DCheckbox extends Vue {
     }
 
     get sizeClass() {
-        return "d-checkbox--" + this.size;
-    }
-
-    get checkboxIcon() {
-        if(this.intermediate){
-            return "indeterminate_check_box";
-        } else if (this.internalChecked){
-            return "check_box";
-
-        }else{
-            return "check_box_outline_blank";
-        }
+        return "d-switch--" + this.size;
     }
 }

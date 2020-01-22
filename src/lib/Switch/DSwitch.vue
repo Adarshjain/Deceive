@@ -1,17 +1,17 @@
 <template>
     <div>
-        <label class="d-checkbox__label"
+        <label class="d-switch__label"
                :class="[
                 {
-                    'd-checkbox--disabled':disabled,
-                    'd-checkbox--error':error !== '',
-                    'd-checkbox--full-width':fullWidth,
-                    'd-checkbox--intermediate':intermediate
+                    'd-switch--disabled':disabled,
+                    'd-switch--error':error !== '',
+                    'd-switch--full-width':fullWidth,
+                    'd-switch--intermediate':intermediate
                 },
                 sizeClass]"
         >
             <input v-bind="$listeners"
-                   class="d-checkbox"
+                   class="d-switch"
                    type="checkbox"
                    :checked="checked"
                    :name="name"
@@ -19,13 +19,12 @@
                    :intermediate="intermediate"
                    @change="onChange"
             >
-            <DIcon class="d-checkbox__icon" :icon="checkboxIcon"/>
-            <span class="d-checkbox__value" v-if="label">{{label}}</span>
+            <span class="d-switch__value" v-if="label">{{label}}</span>
         </label>
-        <div class="d-checkbox__error-msg"
+        <div class="d-switch__error-msg"
              :class="[
                 {
-                    'd-checkbox--disabled':disabled,
+                    'd-switch--disabled':disabled,
                 },
                 sizeClass]"
              v-if="error !== ''"
@@ -34,6 +33,6 @@
     </div>
 </template>
 
-<script lang="ts" src="./checkbox.ts"></script>
+<script lang="ts" src="./switch.ts"></script>
 <style src="../../assets/styles/index.css"></style>
-<style src="./checkbox.css" scoped></style>
+<style src="./switch.css" scoped></style>
