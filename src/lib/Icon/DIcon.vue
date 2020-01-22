@@ -16,9 +16,3 @@
 </script>
 
 <style src="../../assets/styles/index.css"></style>
-<style scoped>
-    .material-icons{
-        font-size: inherit;
-        color: inherit;
-    }
-</style>
