@@ -1,0 +1,38 @@
+.d-list {
+    @apply flex px-4 py-2 w-full cursor-pointer transition-colors transition-250 transition-ease items-center;
+}
+
+.d-list:hover {
+    @apply bg-gray-200;
+}
+
+.d-list--active,
+.d-list:focus,
+.d-list:active {
+    @apply bg-gray-300;
+}
+
+.d-list__icon {
+    @apply text-lg cursor-pointer;
+}
+
+.d-list__content {
+    @apply flex flex-1 ml-2 pt-1 flex-col text-sm;
+}
+
+.d-list__desc {
+    @apply text-xs text-gray-600 mt-1;
+}
+
+.d-list--disabled {
+    @apply bg-gray-100 cursor-not-allowed pointer-events-none;
+}
+
+.d-list--disabled .d-list__icon {
+    @apply text-gray-400;
+}
+
+.d-list--disabled .d-list__title,
+.d-list--disabled .d-list__desc {
+    @apply text-gray-400;
+}
