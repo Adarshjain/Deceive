@@ -6,14 +6,16 @@ storiesOf('Radio Button', module)
         template: `
             <div class="p-2">
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-                <DRadioButton :disabled="disabled"
-                              :label="label"
-                              :name="name"
-                              :size="size"
-                              :error="error"
-                              :fullWidth="fullWidth"
-                              :checked="checked"
+                <DRadioButton
+                        v-for="val of vals"
+                        :key="val"
+                        :disabled="disabled"
+                        :label="val"
+                        :name="name"
+                        :size="size"
+                        :fullWidth="fullWidth"
+                        v-model="selected"
+                        :value="val"
                 />
             </div>`,
         props: {
@@ -45,5 +47,11 @@ storiesOf('Radio Button', module)
                 type: Boolean,
                 default: boolean('checked', false)
             },
+        },
+        data() {
+            return {
+                vals: ['a', 'b', 'c', 'd'],
+                selected: 'b'
+            }
         }
     }));

@@ -3,20 +3,21 @@
         <label class="d-radio__label"
                :class="[
                 {
-                    'd-radio--disabled':disabled,
-                    'd-radio--error':error !== '',
-                    'd-radio--full-width':fullWidth
+                    'd-radio--disabled': disabled,
+                    'd-radio--error': error !== '' && error !== undefined,
+                    'd-radio--full-width': fullWidth
                 },
                 sizeClass]"
         >
             <input type="radio"
                    class="d-radio"
                    ref="input"
-                   v-on="$listeners"
-                   :checked ="checked"
+                   @input="input"
                    :name="name"
+                   :value="value"
+                   :checked="checked == value"
                    :disabled="disabled"
-                   @change="onChange"
+                   v-on="$listeners"
             >
             <DIcon class="d-radio__icon" :icon="radioIcon"/>
             <span class="d-radio__value" v-if="label">{{label}}</span>
@@ -28,7 +29,8 @@
                 },
                 sizeClass]"
              v-if="error !== ''"
-        >{{error}}</div>
+        >{{error}}
+        </div>
     </div>
 </template>
 

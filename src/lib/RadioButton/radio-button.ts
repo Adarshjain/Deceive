@@ -14,8 +14,11 @@ import {Watch} from "vue-property-decorator";
             default: false
         },
         checked: {
-            type: Boolean,
+            type: [Boolean, Number, String, Object], // v-model
             default: false
+        },
+        value: {
+            type: [Boolean, Number, String, Object],
         },
         name: {
             type: String
@@ -31,32 +34,31 @@ import {Watch} from "vue-property-decorator";
             default: false
         }
     },
-    components: {DIcon}
+    components: {DIcon},
+    model: {
+        prop: 'checked',
+        event: 'update'
+    }
 })
 export default class DRadioButton extends Vue {
-    checked!: boolean;
     disabled!: boolean;
-    internalChecked: boolean = false;
+    checked!: Boolean | Number | String | Object;
+    value!: Boolean | Number | String | Object;
     size!: string;
-
-    @Watch('checked')
-    watchChecked(newVal) {
-        this.internalChecked = newVal;
-    }
 
     get sizeClass() {
         return "d-radio--" + this.size;
     }
 
-    onChange(event) {
-        if(this.disabled){
+    input(event) {
+        if (this.disabled) {
             return;
         }
-        this.internalChecked = event.target.checked || this.checked;
+        this.$emit('update', event.target.value);
     }
 
     get radioIcon() {
-        if (this.internalChecked) {
+        if (this.checked == this.value) {
             return "radio_button_checked";
         } else {
             return "radio_button_unchecked";
