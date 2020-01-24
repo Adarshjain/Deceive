@@ -1,5 +1,5 @@
 <template>
-    <i class="material-icons" v-on="$listeners">{{icon}}</i>
+    <i class="material-icons d-icon" v-on="$listeners">{{icon}}</i>
 </template>
 <script lang="ts">
     import Vue from 'vue';
