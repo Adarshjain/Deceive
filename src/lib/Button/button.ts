@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Component from 'vue-class-component';
+import DIcon from '../Icon/DIcon.vue';
 
 @Component({
     name: 'DButton',
@@ -26,8 +27,16 @@ import Component from 'vue-class-component';
         loading: {
             type: Boolean,
             default: false
+        },
+        icon: {
+            type: String
+        },
+        iconPosition: {
+            type: String,
+            default: 'left'
         }
-    }
+    },
+    components:{DIcon}
 })
 export default class DButton extends Vue {
     size!: string;

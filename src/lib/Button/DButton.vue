@@ -6,8 +6,10 @@
                 'd-button--full-width': fullWidth,
             }, computedSize, computedType]"
             :disabled="disabled"
-            v-bind="$listeners">
+            v-on="$listeners">
+        <d-icon :icon="icon" v-if="icon !== undefined && iconPosition === 'left'"/>
         <slot></slot>
+        <d-icon :icon="icon" v-if="icon !== undefined && iconPosition === 'right'"/>
         <span class="d-button__loader"></span>
         <span class="d-button__spinner"></span>
     </button>
