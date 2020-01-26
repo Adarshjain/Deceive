@@ -5,6 +5,9 @@ import DIcon from '../Icon/DIcon.vue';
 @Component({
     name: 'DButton',
     props: {
+        label: {
+            type: String
+        },
         disabled: {
             type: Boolean,
             default: false
@@ -31,15 +34,27 @@ import DIcon from '../Icon/DIcon.vue';
         icon: {
             type: String
         },
+        iconClass: {
+            type: String
+        },
         iconPosition: {
             type: String,
             default: 'left'
+        },
+        iconOnly: {
+            type: Boolean,
+            default: false
+        },
+        error: {
+            type: Boolean,
+            default: false
         }
     },
-    components:{DIcon}
+    components: {DIcon}
 })
 export default class DButton extends Vue {
     size!: string;
+    icon!: string;
     type!: string;
 
     get computedSize() {
@@ -48,5 +63,9 @@ export default class DButton extends Vue {
 
     get computedType() {
         return 'd-button--' + this.type;
+    }
+
+    get hasIcon() {
+        return this.icon !== undefined;
     }
 }
