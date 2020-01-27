@@ -1,0 +1,43 @@
+.d-input {
+    @apply flex flex-col;
+}
+
+.d-input__label {
+    @apply text-xs mb-1;
+}
+
+.d-input__wrapper {
+    @apply flex border rounded-6 px-3 py-2 overflow-hidden items-center border-gray-500 transition-colors transition-250 transition-ease;
+}
+.d-input__wrapper:hover {
+    @apply border-blue-400;
+}
+.d-input__wrapper:focus-within {
+    @apply border-blue-600;
+    box-shadow: 0px 0px 4px 1px rgba(0, 82, 204, 0.4);
+
+}
+
+.d-icon {
+    @apply text-base;
+}
+
+.d-icon--left {
+    @apply mr-2;
+}
+
+.d-icon--right {
+    @apply ml-2;
+}
+
+.d-input__el {
+    @apply text-sm w-full;
+}
+
+.d-input__description {
+    @apply text-xs pt-1 text-gray-600;
+}
+
+.d-input__invalid-message {
+    @apply text-xs pt-1 text-red-400;
+}
