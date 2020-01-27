@@ -66,6 +66,6 @@ export default class DButton extends Vue {
     }
 
     get hasIcon() {
-        return this.icon !== undefined;
+        return this.icon !== undefined && this.icon !== '';
     }
 }
