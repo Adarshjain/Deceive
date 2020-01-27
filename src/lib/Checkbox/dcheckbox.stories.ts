@@ -59,10 +59,6 @@ storiesOf('Checkbox', module)
                     vals: ['Goku', 'Vegeta', 'Kakarot', 'Frieza'],
                     selected: []
                 }
-            }, watch: {
-                selected(v) {
-                    console.log(v);
-                }
             }
         })
     );
