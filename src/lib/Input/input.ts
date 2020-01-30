@@ -70,6 +70,7 @@ export default class DInput extends mixins(DHelpers) {
     internalValue!: number | string | undefined;
     value!: number | string | undefined;
     size!: string;
+    invalidMessage!: string;
     disabled!: boolean;
 
     created() {
@@ -86,7 +87,8 @@ export default class DInput extends mixins(DHelpers) {
             'd-input',
             'd-input--' + this.size,
             {
-                'd-input--disabled' : this.disabled
+                'd-input--disabled' : this.disabled,
+                'd-input--error' : this.$present(this.invalidMessage)
             }
         ]
     }

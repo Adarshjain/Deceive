@@ -27,8 +27,8 @@
                     v-if="$present(icon) && iconPosition === 'right'"
             />
         </span>
-        <span class="d-input__description" v-if="$present(description)">{{description}}</span>
         <span class="d-input__invalid-message" v-if="$present(invalidMessage)">{{invalidMessage}}</span>
+        <span class="d-input__description" v-if="$present(description)">{{description}}</span>
     </label>
 </template>
 

@@ -1,3 +1,5 @@
+/* DEFAULT STYLE */
+
 .d-input {
     @apply flex flex-col;
 }
@@ -7,7 +9,7 @@
 }
 
 .d-input__wrapper {
-    @apply flex border rounded-6 px-3 py-2 overflow-hidden items-center border-gray-500 transition-colors transition-250 transition-ease;
+    @apply flex border rounded-6 px-3 py-2 overflow-hidden items-center border-gray-500 transition-colors transition-250 transition-ease cursor-text;
 }
 
 .d-input__wrapper:hover {
@@ -20,7 +22,7 @@
 }
 
 .d-icon {
-    @apply text-base;
+    @apply text-base cursor-default;
 }
 
 .d-icon--left {
@@ -43,6 +45,9 @@
     @apply text-xs pt-1 text-red-400;
 }
 
+/* DEFAULT STYLE ENDS */
+
+/* SIZE VARIANT - SMALL */
 .d-input--small .d-input__label {
     @apply text-xs;
 }
@@ -58,8 +63,9 @@
 .d-input--small .d-icon {
     @apply text-sm;
 }
+/* SIZE VARIANT - SMALL : ENDS */
 
-
+/* SIZE VARIANT - LARGE */
 .d-input--large .d-input__label {
     @apply text-base;
 }
@@ -80,7 +86,16 @@
 .d-input--large .d-input__invalid-message {
     @apply text-sm;
 }
+/* SIZE VARIANT - LARGE : ENDS */
 
+/* ERROR VARIANT STARTS */
+.d-input--error .d-input__wrapper {
+    border: 1px solid rgb(222, 54, 24);
+    box-shadow: 0 0 4px 1px rgba(222, 54, 24, 0.5);
+}
+/* ERROR VARIANT ENDS */
+
+/* DISABLED STATE START */
 .d-input--disabled .d-input__label {
     @apply text-gray-600;
 }
@@ -93,3 +108,4 @@
 .d-input--disabled .d-icon {
     @apply text-gray-600 !important;
 }
+/* DISABLED STATE ENDS */
