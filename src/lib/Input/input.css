@@ -3,19 +3,20 @@
 }
 
 .d-input__label {
-    @apply text-xs mb-1;
+    @apply text-sm mb-1;
 }
 
 .d-input__wrapper {
     @apply flex border rounded-6 px-3 py-2 overflow-hidden items-center border-gray-500 transition-colors transition-250 transition-ease;
 }
+
 .d-input__wrapper:hover {
     @apply border-blue-400;
 }
+
 .d-input__wrapper:focus-within {
     @apply border-blue-600;
-    box-shadow: 0px 0px 4px 1px rgba(0, 82, 204, 0.4);
-
+    box-shadow: 0 0 4px 1px rgba(0, 82, 204, 0.4);
 }
 
 .d-icon {
@@ -40,4 +41,55 @@
 
 .d-input__invalid-message {
     @apply text-xs pt-1 text-red-400;
+}
+
+.d-input--small .d-input__label {
+    @apply text-xs;
+}
+
+.d-input--small .d-input__wrapper {
+    @apply px-2 py-1;
+}
+
+.d-input--small input {
+    @apply text-xs;
+}
+
+.d-input--small .d-icon {
+    @apply text-sm;
+}
+
+
+.d-input--large .d-input__label {
+    @apply text-base;
+}
+
+.d-input--large .d-input__wrapper {
+    @apply px-4 py-3;
+}
+
+.d-input--large input {
+    @apply text-base;
+}
+
+.d-input--large .d-icon {
+    @apply text-lg;
+}
+
+.d-input--large .d-input__description,
+.d-input--large .d-input__invalid-message {
+    @apply text-sm;
+}
+
+.d-input--disabled .d-input__label {
+    @apply text-gray-600;
+}
+
+.d-input--disabled .d-input__wrapper,
+.d-input--disabled input {
+    @apply bg-gray-300 text-gray-500 cursor-not-allowed pointer-events-none shadow-none border-gray-300;
+}
+
+.d-input--disabled .d-icon {
+    @apply text-gray-600 !important;
 }

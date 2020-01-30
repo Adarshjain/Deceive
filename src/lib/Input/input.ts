@@ -69,6 +69,8 @@ export default class DInput extends mixins(DHelpers) {
     type!: string;
     internalValue!: number | string | undefined;
     value!: number | string | undefined;
+    size!: string;
+    disabled!: boolean;
 
     created() {
         this.internalValue = this.value;
@@ -77,6 +79,16 @@ export default class DInput extends mixins(DHelpers) {
     @Watch('value')
     watchValue(newVal) {
         this.internalValue = newVal;
+    }
+
+    getComputedClass() {
+        return [
+            'd-input',
+            'd-input--' + this.size,
+            {
+                'd-input--disabled' : this.disabled
+            }
+        ]
     }
 
     updateValue(value: string) {
@@ -96,11 +108,4 @@ export default class DInput extends mixins(DHelpers) {
         this.updateValue((event.target as HTMLInputElement).value);
     }
 
-    // onChange(event: MouseEvent) {
-    //     this.updateValue((event.target as HTMLInputElement).value);
-    // }
-    //
-    // onBlur(event: MouseEvent) {
-    //     this.updateValue((event.target as HTMLInputElement).value);
-    // }
 }

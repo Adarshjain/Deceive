@@ -1,5 +1,5 @@
 <template>
-    <label class="d-input">
+    <label :class="getComputedClass()">
         <span class="d-input__label" v-if="$present(label)">{{label}}</span>
         <span class="d-input__wrapper">
             <d-icon :class="iconClass"
