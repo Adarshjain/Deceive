@@ -70,6 +70,16 @@ module.exports = {
                 '1000': 'rgb(15, 31, 64)'
             }
         },
+        transformOrigin: { // defaults to these values
+            't': 'top',
+            'tr': 'top right',
+            'r': 'right',
+            'br': 'bottom right',
+            'b': 'bottom',
+            'bl': 'bottom left',
+            'l': 'left',
+            'tl': 'top left',
+        },
         transitionProperty: { // defaults to these values
             'none': 'none',
             'all': 'all',
@@ -83,11 +93,17 @@ module.exports = {
         transitionDuration: { // defaults to these values
             'default': '250ms',
             '0': '0ms',
+            '50': '50ms',
+            '75': '75ms',
             '100': '100ms',
+            '150': '150ms',
+            '200': '200ms',
             '250': '250ms',
+            '300': '300ms',
+            '400': '400ms',
             '500': '500ms',
             '750': '750ms',
-            '1000': '1000ms',
+            '1000': '1000ms'
         },
         transitionTimingFunction: { // defaults to these values
             'default': 'ease',
@@ -115,6 +131,7 @@ module.exports = {
         },
     },
     variants: { // all the following default to ['responsive']
+        transformOrigin: ['responsive'],
         transitionProperty: ['responsive'],
         transitionDuration: ['responsive'],
         transitionTimingFunction: ['responsive'],
@@ -123,5 +140,6 @@ module.exports = {
     },
     plugins: [
         require('tailwindcss-transitions')(),
+        require('tailwindcss-transforms')(),
     ],
 };

@@ -1,0 +1,3 @@
+.d-popup {
+    @apply absolute z-50 transition-all transition-ease transition-250;
+}
