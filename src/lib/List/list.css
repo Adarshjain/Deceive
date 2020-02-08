@@ -1,5 +1,5 @@
 .d-list {
-    @apply flex px-4 py-2 w-full cursor-pointer transition-colors transition-250 transition-ease items-center;
+    @apply flex px-4 py-2 pl-3 w-full cursor-pointer transition-colors transition-250 transition-ease items-center rounded-6;
 }
 
 .d-list:hover {
@@ -13,11 +13,11 @@
 }
 
 .d-list__icon {
-    @apply text-lg cursor-pointer;
+    @apply text-lg mr-2 cursor-pointer;
 }
 
 .d-list__content {
-    @apply flex flex-1 ml-2 pt-1 flex-col text-sm;
+    @apply flex flex-1 flex-col text-sm;
 }
 
 .d-list__desc {
