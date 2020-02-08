@@ -8,7 +8,7 @@
         <slot name="avatar"/>
         <div class="d-list__content">
             <span class="d-list__title">{{label}}</span>
-            <span class="d-list__desc">{{desc}}</span>
+            <span class="d-list__desc" v-if="!!desc">{{desc}}</span>
         </div>
         <slot name="avatar-right"/>
     </div>
