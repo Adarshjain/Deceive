@@ -70,6 +70,12 @@ module.exports = {
                 '1000': 'rgb(15, 31, 64)'
             }
         },
+        boxShadow: {
+            'default': '0px 0px 1px 0px rgba(0, 0, 30, 0.1),0px 1px 2px 0px rgba(0, 0, 30, 0.1),0px 2px 4px 0px rgba(0, 0, 30, 0.1)',
+            'md': '0px 0px 2px 0px rgba(0, 0, 30, 0.1),0px 2px 4px 0px rgba(0, 0, 30, 0.1),0px 4px 8px 0px rgba(0, 0, 30, 0.1)',
+            'lg': '0px 0px 2px 0px rgba(0, 0, 30, 0.1),0px 4px 8px 0px rgba(0, 0, 30, 0.1),0px 8px 16px 0px rgba(0, 0, 30, 0.1)',
+            'none':'none'
+        },
         transformOrigin: { // defaults to these values
             't': 'top',
             'tr': 'top right',
