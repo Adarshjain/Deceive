@@ -43,7 +43,6 @@ export default class DPopup extends Vue {
         if (this.pos.top == undefined && this.pos.bottom == undefined) {
             this.pos.top = 0;
         }
-        console.log(JSON.parse(JSON.stringify(this.pos)));
         if (this.pos.left !== undefined) {
             popup.style.left = this.pos.left + 'px';
             let popupBounds = popup.getBoundingClientRect();
@@ -54,7 +53,6 @@ export default class DPopup extends Vue {
         if (this.pos.top !== undefined) {
             popup.style.top = this.pos.top + 'px';
             let popupBounds = popup.getBoundingClientRect();
-        console.log(JSON.parse(JSON.stringify(popupBounds)));
             if (popupBounds.top + popupContainer.clientHeight > windowHeight) {
                 popup.style.top = windowHeight - popupContainer.clientHeight + 'px';
             }
@@ -79,7 +77,6 @@ export default class DPopup extends Vue {
 
     get anchorClass() {
         let transitionPrefix = "transform-";
-        console.log(this.anchor);
         switch (this.anchor) {
             case this.anchors.top:
                 return transitionPrefix + "b";
